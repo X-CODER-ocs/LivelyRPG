@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# 打包文件
+*.zip
+
+# Python
+__pycache__/
+*.pyc
