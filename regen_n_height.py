@@ -48,7 +48,7 @@ def generate_normal_and_height(rgb, strength=NORMAL_STRENGTH):
     normal[..., 2] = np.clip((nz + 1.0) * 0.5 * 255, 0, 255).astype(np.uint8)
     # Alpha = 高度图: 大幅压缩范围，视差非常轻微
     height_norm = np.clip((height - height.min()) / (height.max() - height.min() + 1e-6), 0, 1)
-    height_enhanced = 0.8 + height_norm * 0.2  # 限制在 0.8-1.0，20%起伏
+    height_enhanced = 0.9 + height_norm * 0.1  # 限制在 0.9-1.0，10%起伏
     normal[..., 3] = (height_enhanced * 255).astype(np.uint8)
     return normal
 
