@@ -16,4 +16,4 @@ jobs:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
           git remote add gitlab https://service_account_project_86178854_b82e1423aaa52824b5ba290dd11e63fc:${GITLAB_TOKEN}@gitlab.com/X_CODER-ocs/LivelyRPG.git
-          git push gitlab main --force
+          git push gitlab main
