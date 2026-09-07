@@ -1,0 +1,19 @@
+name: 同步到 GitLab
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 推送到 GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          git remote add gitlab https://service_account_project_86178854_b82e1423aaa52824b5ba290dd11e63fc:${GITLAB_TOKEN}@gitlab.com/X_CODER-ocs/LivelyRPG.git
+          git push gitlab main --force
